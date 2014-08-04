@@ -28,6 +28,8 @@ class phppgadmin::params{
       $phppgadmin_conf_template_file = 'phppgadmin/CentOS/config.inc.php.erb'
       $http_conf_file     = '/etc/httpd/conf.d/phpPgAdmin.conf'
       $http_conf_template_file = 'phppgadmin/CentOS/phpPgAdmin.conf.erb'
+      $default_host_file     = '/etc/apache2/sites-available/default'
+      $default_host_template_file     = 'phppgadmin/CentOS/default.erb'
     }
     'Debian', 'Ubuntu': {
       $phppgadmin_package = 'phppgadmin'
@@ -35,6 +37,8 @@ class phppgadmin::params{
       $phppgadmin_conf_template_file = 'phppgadmin/Ubuntu/config.inc.php.erb'
       $http_conf_file     = '/etc/phppgadmin/apache.conf'
       $http_conf_template_file = 'phppgadmin/Ubuntu/phppgadmin.conf.erb'
+      $default_host_file     = '/etc/apache2/sites-available/default'
+      $default_host_template_file     = 'phppgadmin/CentOS/default.erb'
     }
     default: {
       fail("Unsupported platform: ${::osfamily}|${::operatingsystem}")

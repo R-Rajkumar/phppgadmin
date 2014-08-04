@@ -39,12 +39,20 @@ class phppgadmin(
     require => Package[$phppgadmin::params::phppgadmin_package],
   }
 
+  file{$phppgadmin::params::default_host_file:
+    ensure  => present,
+    mode    => '0644',
+    content => template($phppgadmin::params::default_host_template_file),
+    require => Package[$phppgadmin::params::phppgadmin_package],
+  }
+
   service { apache2:
     ensure => running,
     enable => true,
     subscribe =>[ 
 		  File[$phppgadmin::params::http_conf_file],
  	          File[$phppgadmin::params::phppgadmin_conf_file],
+		  File[$phppgadmin::params::default_host_file],
 		],
   }
 }
