@@ -1,8 +1,7 @@
 class phppgadmin(
   $db_host  = $phppgadmin::params::db_host,
   $db_port  = $phppgadmin::params::db_port,
-  $extra_login_security = $phppgadmin::params::extra_login_security,
-  $deny = 'deny from all'
+  $extra_login_security = $phppgadmin::params::extra_login_security
 ) inherits phppgadmin::params {
 
   package{$phppgadmin::params::phppgadmin_package:

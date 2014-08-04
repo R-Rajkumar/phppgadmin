@@ -27,8 +27,8 @@ class phppgadmin(
     ensure => running,
     enable => true,
     subscribe =>[ 
-		File[$phppgadmin::params::http_conf_file],
- 	        File[$phppgadmin::params::phppgadmin_conf_file],
+		  File[$phppgadmin::params::http_conf_file],
+ 	          File[$phppgadmin::params::phppgadmin_conf_file],
 		],
   }
 
