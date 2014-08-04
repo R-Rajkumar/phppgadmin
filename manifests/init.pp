@@ -15,6 +15,21 @@
 # specific language governing permissions and limitations
 # under the License.
 
+# Usage
+# -----
+#
+#  class {'phppgadmin':
+#    db_host	   => 'localhost',
+#    db_port        => '5432',
+#    owned_only 	   => false,
+#    extra_login_security => false
+#  }
+#
+# db_host : PostgreSQL server host which needs to be managed
+# db_port : PostgreSQL server port
+# ownded_only : Whether to disply own databases or all databases to a logged in user
+# extra_login_security : Restrict remote login
+
 class phppgadmin(
   $db_host  = $phppgadmin::params::db_host,
   $db_port  = $phppgadmin::params::db_port,
