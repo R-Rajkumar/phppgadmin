@@ -20,7 +20,7 @@ class phppgadmin::params{
   $db_host  = 'localhost'
   $db_port  = '5432'
   $extra_login_security = false
-  $owned_only = true
+  
 
   case $::operatingsystem {
     'RedHat', 'CentOS', 'Fedora': {
